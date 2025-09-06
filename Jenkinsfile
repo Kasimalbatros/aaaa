@@ -19,19 +19,19 @@ pipeline {
         stage('Unit Test') {
             steps {
                 echo 'Running Unit Tests'
-                sh 'pytest tests/unit'
+                sh "docker run --rm ${DOCKER_IMAGE} python -m pytest tests/unit/ -v"
             }
         }
         stage('Integration Test') {
             steps {
                 echo 'Running Integration Tests'
-                sh 'pytest tests/integration'
+                sh "docker run --rm ${DOCKER_IMAGE} python -m pytest tests/integration/ -v"
             }
         }
         stage('API Test') {
             steps {
                 echo 'Running API Tests'
-                sh 'pytest tests/api'
+                sh "docker run --rm ${DOCKER_IMAGE} python -m pytest tests/api/ -v"
             }
         }
         stage('Deploy') {
