@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Fetching code from GitHub'
-                git branch: 'master', url: 'https://github.com/Kasimalbatros/exact-flow-of-pipeline.git'
+                git branch: 'master', url: 'https://github.com/Kasimalbatros/aaaa.git'
             }
         }
         stage('Build') {
